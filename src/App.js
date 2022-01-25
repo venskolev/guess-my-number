@@ -21,9 +21,11 @@ function App() {
           }}
         ></input>
         <button onClick={() => {
-          setZehler(zehler+1)
-          if(parseInt(rate) === randomZahl){
-            setMesage("Das ist richtig!");
+          if(isNaN(rate)){
+            setMesage("Geben Sie ein Zahl!")
+          }else if(parseInt(rate) === randomZahl){
+            setMesage(`Das ist richtig! Mein Zahl war ${randomZahl}`);
+            setZehler(zehler+1);
           } else {
             setMesage("Das ist falsch!")
           }
